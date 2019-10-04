@@ -1,0 +1,23 @@
+spring:
+  main:
+    banner-mode: "off"
+  application:
+    name: discovery-server
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,beans,env,loggers,metrics,gateway
+    enabled-by-default: true
+  metrics:
+    tags:
+      application: ${spring.application.name}
+      environment: ${spring.profiles}
+
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://localhost:8888/eureka

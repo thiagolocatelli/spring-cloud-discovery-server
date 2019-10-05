@@ -9,4 +9,4 @@ MAINTAINER thiagolocatelli <thiago.locatelli@gmail.com>
 EXPOSE 8080
 WORKDIR /app/
 COPY --from=builder /app/target/spring-cloud-discovery-server.jar /app/spring-cloud-discovery-server.jar
-ENTRYPOINT ["java", "-Djava.security.egd=file:/dev/./urandom", "-jar", "/application/spring-cloud-discovery-server.jar"]
+ENTRYPOINT ["java", "-Djava.security.egd=file:/dev/./urandom", "-jar", "/app/spring-cloud-discovery-server.jar"]
